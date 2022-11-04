@@ -1,6 +1,7 @@
 {
   "name": "project-pcat",
   "version": "1.0.0",
+  "type": "module",
   "description": "PCAT Photo App",
   "main": "app.js",
   "scripts": {
@@ -11,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
