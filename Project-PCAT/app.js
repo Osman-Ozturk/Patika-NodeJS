@@ -73,6 +73,13 @@ app.put('/photos/:id',async (req, res) => {
   res.redirect(`/photos/${req.params.id}`)
 });
 
+app.delete('/photos/:id', async (req, res) => {
+  const photo = await Photo.findOne({ _id: req.params.id });
+  let deletedImage = __dirname + '/public' + photo.image;
+  fs.unlinkSync(deletedImage);
+  await Photo.findByIdAndRemove(req.params.id);
+  res.redirect('/');
+});
 
 
 
